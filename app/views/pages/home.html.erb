@@ -7,5 +7,13 @@
 
 		<%= link_to "Fútbol", "https://www.facebook.com/deportescolaless", class: "btn btn-primary btn-lg"%>
 		<%= link_to "BT2", "#", class: "btn btn-default btn-lg"%></h1>
+			<h1>
+	<% if user_signed_in? %>
+          <h3>Estás conectado como <%= current_user %></h3> 
+     <% else %>
+		<%= link_to "Ingresa", new_user_session_path, class: "btn btn-default btn-lg"%>
+
+		<%= link_to "Inscríbete", new_user_registration_path, class: "btn btn-primary btn-lg"%>
+	 <% end %>
 </div>
 

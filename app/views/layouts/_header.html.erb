@@ -18,6 +18,11 @@
     <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "Inicio", root_path %></li>
           <li><%= link_to "Acerca de Mi", about_path %></li>
+  <% if user_signed_in? %>
+          <li><%= link_to "Salir", destroy_user_session_path, method: :delete %></li>
+  <% else %>
+          <li><%= link_to "Entrar", new_user_session_path%></li>
+  <% end %>
     </ul>
   </div><!-- /.navbar-collapse -->
 </div><!-- /.container -->
